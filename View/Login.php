@@ -97,6 +97,31 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
     </style>
 	<title>Login Page</title>
    <!--Made with love by Mutiullah Samim -->
@@ -112,11 +137,14 @@ margin-left: 4px;
 </head>
 <body>
     
+    <a href="../View/Index.php" class="next">&laquo; Volver a la pantalla principal</a>
+
+
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Sign In</h3>
+				<h3>Iniciar sesión</h3>
 				
 			</div>
 			<div class="card-body">
@@ -125,20 +153,20 @@ margin-left: 4px;
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" placeholder="Nombre de usuario">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="Contraseña">
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
+						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="submit" value="Ingresar" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
