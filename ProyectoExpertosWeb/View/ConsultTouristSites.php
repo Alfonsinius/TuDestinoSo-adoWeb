@@ -1,10 +1,18 @@
-<!DOCTYPE html>
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+?>
 
 <html>
 <title>Tu destino soñado </title>
 <head>
-  
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
  <style>
  .footer {
    position: fixed;
@@ -46,20 +54,14 @@ li a:hover:not(.active) {
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    
 </head>
-<body style="background-color:#AED6F1;">
-<ul>
-  <li><a href="index.html">Inicio</a></li>
-  <li><a href="#news">Buscar ruta turistica</a></li>
-  <li><a href="consultTouristSites">Consultar sitios</a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a href="#about">Iniciar sesión</a></li>
-</ul>
+    
+  <body style="background-color:#AED6F1;">
+  <?php
+include '../View/Menu.html';
+?>
 <br>
 <center>
 <div class="container">
@@ -78,26 +80,27 @@ li a:hover:not(.active) {
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
+        
       <div class="item active">
-        <img src="1.jpg" alt="Volcán Irazú" style="width:50%;height=100%;">
+          <img src="../Images/1.jpg" alt="Volcán Irazú" style="width:50%;height:50%;">
       </div>
 
       <div class="item">
-        <img src="2.jpg" alt="Playa Conchal" style="width:50%;height=50%;">
+        <img src="../Images/2.jpg" alt="Playa Conchal" style="width:50%;height:50%;">
       </div>
     
       <div class="item">
-        <img src="3.jpg" alt="Playa Manzanillo" style="width:50%;height=50%;">
+        <img src="../Images/3.jpg" alt="Playa Manzanillo" style="width:50%;height:50%;">
       </div>
-	   <div class="item">
-        <img src="4.jpg" alt="Volcán Poas" style="width:50%;height=50%;">
+       <div class="item">
+        <img src="../Images/4.jpg" alt="Volcán Poas" style="width:50%;height:50%;">
       </div>
     
       <div class="item">
-        <img src="5.jpeg" alt="Sanatorio duran" style="width:50%;height=50%;">
+          <img src="../Images/5.jpeg" alt="Sanatorio duran" style="width:50%;height:50%;">
       </div>
 	   <div class="item">
-        <img src="6.jpg" alt="Paseo de los turistas, puntarenas" style="width:50%;height=50%;">
+        <img src="../Images/6.jpg" alt="Paseo de los turistas, puntarenas" style="width:50%;height:50%;">
       </div>
     
     </div>
@@ -118,5 +121,5 @@ li a:hover:not(.active) {
   <p>Tu destino soñado</p>
 	 <p>Versión 1.0</p>
 </div>
-
+</body>
 </html>
