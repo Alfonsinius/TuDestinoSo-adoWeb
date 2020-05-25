@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<title>Tu destino soñado </title>
+
 <head>
   
   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
@@ -45,21 +45,11 @@ li a:hover:not(.active) {
 </style>
 </head>
 <body style="background-color:#AED6F1;">
-<ul>
-  <li><a href="index.html">Inicio</a></li>
-  <li><a href="#news">Buscar ruta turistica</a></li>
-  <li><a href="consultTouristSites.html">Consultar sitios</a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a ></a></li>
-  <li><a href="#about">Iniciar sesión</a></li>
-</ul>
-<br>
-<br>
-<br>
+
+    <?php
+include '../View/Menu.html';
+?>
+
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/psZc1x1TQNI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -70,7 +60,7 @@ li a:hover:not(.active) {
 <div class="footer">
   <p>Tu destino soñado</p>
    <p>Creadores: Josseline Matamoros</p>
-    <p>Alfonso Jiménez</p
+   <p>Alfonso Jiménez</p>
 	 <p>Versión 1.0</p>
 </div>
 
