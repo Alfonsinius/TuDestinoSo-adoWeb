@@ -48,7 +48,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: #2874A6;
 }
 </style>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -58,14 +58,14 @@ li a:hover:not(.active) {
     
 </head>
     
-  <body style="background-color:#AED6F1;">
+  <body style="background-color:#273746;">
   <?php
 include '../View/Menu.html';
 ?>
 <br>
 <center>
 <div class="container">
-  <h2>Sitios turisticos </h2>  
+    <h2 style="color:white">Sitios turisticos </h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
