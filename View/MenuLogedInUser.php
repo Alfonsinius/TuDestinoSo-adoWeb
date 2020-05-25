@@ -16,10 +16,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"></li>
-                    <li><a href="../View/Index.php">Inicio</a></li>
-                   <li><a href="#news">Buscar ruta turistica</a></li>
-                    <li><a href="../View/ConsultTouristSites.php">Consultar sitios</a></li>
-                    <li><a href="../View/Login.php">Iniciar sesión</a></li>
+                    <li><a href="../View/Login.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>

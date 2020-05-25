@@ -148,8 +148,9 @@ a:hover {
 				
 			</div>
 			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
+                            <form action="../View/ManageTouristSites.php" method="post">
+                                
+                                <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
@@ -166,20 +167,26 @@ a:hover {
 						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
+                                          
 						<input type="submit" value="Ingresar" class="btn float-right login_btn">
+                                            
 					</div>
-				</form>
+			
 			</div>
+                            </form>
+					
 			<!-- <div class="card-footer">
 				<div class="d-flex justify-content-center links">
 					Don't have an account?<a href="#">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a> -->
-				</div>
+					<a href="#">Forgot your password?</a>
+                        </div>
+                        -->
+				
 			</div>
 		</div>
 	</div>
-</div>
+
 </body>
 </html>
