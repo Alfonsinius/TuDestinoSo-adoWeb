@@ -44,8 +44,7 @@ include '../View/MenuLogedInUser.php';
                                 <span class="glyphicon glyphicon-trash" style="color: #ffffff"></span> Eliminar sitio 
                             </a></td>
 
-                               <?php echo $datos->getTicket(); ?>
-                            <td> <a method="get" action="DetailTouristSites.php" href="../View/DetailTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
+                            <td> <a method="get" action="DetailTouristSites.php" href="../View/EditTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
                         <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
 
                         
@@ -61,7 +60,7 @@ include '../View/MenuLogedInUser.php';
 
                         </td>
                           <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" method="post" action="DetailTouristSites.php"></span> Editar</td></a>
+                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" method="post" action="EditTouristSites.php"></span> Editar</td></a>
                     </tr>
                     <tr>
                         <td style="color: #ffffff">3</td>

@@ -73,7 +73,7 @@ and open the template in the editor.
         ?>
     <center>
         <font color="white" face="times" size=26>
-        Editar sitio turistico
+        Ver sitio turistico
         </font>
     </center>
 
@@ -110,7 +110,7 @@ and open the template in the editor.
     <br>
     <br>
     <div class="col-md-14 col-xs-14 col-sm-14" style="text-align: center">
-        <button class="button button3">Editar</button>
+        <button class="button button3">Atrás</button>
         <button class="button button3">Cancelar</button>
     </div>
 

@@ -52,8 +52,7 @@ and open the template in the editor.
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
+              
                 cursor: pointer;
             }
 
@@ -74,9 +73,14 @@ and open the template in the editor.
         Rutas turistica
         </font>
     </center>
-      <center>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62892.93276820737!2d-83.9221248!3d9.8664448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1590641552989!5m2!1ses!2scr" frameborder="0" allowfullscreen=""style="width:95%;height:300px;" aria-hidden="false" tabindex="0"></iframe>
-    </center>
+      <div class="col-md-12 col-xs-10 col-sm-10">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62892.93276820737!2d-83.9221248!3d9.8664448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1590641552989!5m2!1ses!2scr" frameborder="0" allowfullscreen=""style="width:45%;height:300px;" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+     <div class="col-md-20 col-xs-20 col-sm-20">
+           <button class="button button3">Ruta 1</button>
+            <button class="button button3">Ruta 2</button>
+             <button class="button button3">Ruta 3 </button>
+     </div>
     <div class="footer">
         <p>Tu destino soñado</p>
         <p>Creadores: Josseline Matamoros</p>
