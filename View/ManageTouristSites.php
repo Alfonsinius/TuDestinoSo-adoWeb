@@ -23,7 +23,7 @@ include '../View/MenuLogedInUser.php';
         <div class="container">
             <h2 style="color: #ffffff">Lista de sitios turísticos</h2>
             <p style="color: #ffffff">Acá podrá visualizar y gestionar todos los sitios turísticos del sistema.</p>            
-            <table class="table">
+            <table class="table" >
                 <thead>
                     <tr>
                         <th style="color: #ffffff">ID</th>
@@ -33,35 +33,35 @@ include '../View/MenuLogedInUser.php';
                         <th style="color: #ffffff">Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody  >
                     <tr>
-                        <td style="color: #ffffff">1</td>
-                        <td style="color: #ffffff">Playa Manzanillo</td>
-                        <td style="color: #ffffff">Paraíso tropical con asombrosos arrecifes de córal</td>
+                        <td style="color: #ffffff" >1</td>
+                        <td style="color: #ffffff" id="nombre">Playa Manzanillo</td>
+                        <td style="color: #ffffff" >Paraíso tropical con asombrosos arrecifes de córal</td>
                         <td style="color: #ffffff">Puntarenas</td>
                         
                         <td style="color: #ffffff"><a href="#" class="btn btn-info btn-lg" style="background-color:red">
                                 <span class="glyphicon glyphicon-trash" style="color: #ffffff"></span> Eliminar sitio 
                             </a></td>
 
-
-                        <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff"></span> Editar</td></a>
+                               <?php echo $datos->getTicket(); ?>
+                            <td> <a method="get" action="DetailTouristSites.php" href="../View/DetailTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
+                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
 
                         
                     </tr>
                     <tr>
                         <td style="color: #ffffff">2</td>
                         <td style="color: #ffffff">Volcán Irazú</td>
-                        <td style="color: #ffffff">Es el volcán más alto de Costa Rica y ofrece una asombrosa vista.</td>
-                        <td style="color: #ffffff">Cordillera central, cerca de la ciudad de Cartago</td>
+                        <td style="color: #ffffff" >Es el volcán más alto de Costa Rica y ofrece una asombrosa vista.</td>
+                        <td style="color: #ffffff" >Cordillera central, cerca de la ciudad de Cartago</td>
                         <td><a href="#" class="btn btn-info btn-lg" style="background-color:red">
                                 <span class="glyphicon glyphicon-trash" style="color: #ffffff"></span> Eliminar sitio 
                             </a>
 
                         </td>
                           <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff"></span> Editar</td></a>
+                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" method="post" action="DetailTouristSites.php"></span> Editar</td></a>
                     </tr>
                     <tr>
                         <td style="color: #ffffff">3</td>
@@ -75,7 +75,7 @@ include '../View/MenuLogedInUser.php';
                         </td>
                         
                           <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff"></span> Editar</td></a>
+                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
                     </tr>
                 </tbody>
             </table>
