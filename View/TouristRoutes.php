@@ -68,12 +68,25 @@ and open the template in the editor.
         <?php
         include '../View/Menu.html';
         ?>
+        
     <center>
         <font color="white" face="times" size=26>
         Rutas turistica
         </font>
     </center>
-      <div class="col-md-12 col-xs-10 col-sm-10">
+    <div  style="position: absolute; width: 500px; height: 10px; padding: 10px; top: 150px; right: 2px; z-index: 1;">
+         <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Nombre del sitio que desea ver detalles:</FONT></p>
+        <input type="text" id="fname" name="descripcion" value=""><br>
+        
+       
+      <br>
+    <br>
+        <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/DetailTouristSites.php" role="button">Ver detalles</a>
+      
+    </div>
+       
+
+      <div class="col-md-12 col-xs-10 col-sm-10" position="right">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62892.93276820737!2d-83.9221248!3d9.8664448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1590641552989!5m2!1ses!2scr" frameborder="0" allowfullscreen=""style="width:45%;height:300px;" aria-hidden="false" tabindex="0"></iframe>
     </div>
      <div class="col-md-20 col-xs-20 col-sm-20">
@@ -81,6 +94,12 @@ and open the template in the editor.
             <button class="button button3">Ruta 2</button>
              <button class="button button3">Ruta 3 </button>
      </div>
+    
+     
+        
+  
+    
+    
     <div class="footer">
         <p>Tu destino soñado</p>
         <p>Creadores: Josseline Matamoros</p>
