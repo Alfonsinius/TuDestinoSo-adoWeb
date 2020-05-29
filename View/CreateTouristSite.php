@@ -73,7 +73,7 @@ and open the template in the editor.
         ?>
     <center>
         <font color="white" face="times" size=26>
-        Editar sitio turistico
+        Crear sitio turistico
         </font>
     </center>
 
@@ -82,21 +82,21 @@ and open the template in the editor.
 
     </div>
     <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
-        <input type="text" id="fname" name="nombre" value="Playa Manzanillo">
+        <input type="text" id="fname" name="nombre" value="">
     </div>
     <div class="col-md-12 col-xs-16 col-sm-16" style="text-align: center">
         <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Ubicación del sitio</FONT></p>
 
     </div>
     <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <input type="text" id="fname" name="ubicacion" value="Puntarenas">
+        <input type="text" id="fname" name="ubicacion" value="">
     </div>
     <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
         <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Descripción del sitio</FONT></p>
 
     </div>
     <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <input type="text" id="fname" name="descripcion" value="Paraíso tropical con asombrosos arrecifes de córal"><br>
+        <input type="text" id="fname" name="descripcion" value=""><br>
     </div>
  <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Link imagen del sitio</FONT></p>
@@ -109,15 +109,13 @@ and open the template in the editor.
    
     <br>
     <br>
-    <div class="col-md-19 col-xs-19 col-sm-14" style="text-align: center">
-      <br>
-    <br>
-        <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/ManageTouristSites.php" role="button">Editar</a>
+    <div class="col-md-14 col-xs-14 col-sm-14" style="text-align: center">
+     <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/ManageTouristSites.php" role="button">Guardar</a>
       
        <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/ManageTouristSites.php" role="button">Cancelar</a>
-        
+          
     </div>
- 
+
 
 
 
