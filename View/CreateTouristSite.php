@@ -110,9 +110,9 @@ and open the template in the editor.
     <br>
     <br>
     <div class="col-md-14 col-xs-14 col-sm-14" style="text-align: center">
-     <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/ManageTouristSites.php" role="button">Guardar</a>
+     <a  class="button button3" href="../View/ManageTouristSites.php" role="button">Guardar</a>
       
-       <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/ManageTouristSites.php" role="button">Cancelar</a>
+       <a  class="button button3" href="../View/ManageTouristSites.php" role="button">Cancelar</a>
           
     </div>
 

@@ -113,7 +113,7 @@ and open the template in the editor.
       <div class="col-md-19 col-xs-19 col-sm-14" style="text-align: center">
       <br>
     <br>
-        <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/TouristRoutes.php" role="button">Atrás</a>
+        <a  class="button button3" href="../View/TouristRoutes.php" role="button">Atrás</a>
       
     </div>
     </div>
