@@ -14,7 +14,7 @@ include '../View/Menu.html';
     
         <div class="container">
     
-   <h3 style="color:white; background-color:#2874A6">Seleccione una de la ubicaciones predeterminadas.</h3>
+   <h3 style="color:white;">Seleccione una de la ubicaciones predeterminadas.</h3>
                
    <center><strong>Lugar de inicio.</strong></center>
   <select name="selectTime" id="framework" class="form-control selectpicker">   
@@ -25,7 +25,7 @@ include '../View/Menu.html';
                        
                     </select>
    </div>
-   
+        <div class="container">
    <center><strong>Punto de referencia.</strong></center>
   <select name="selectTime" id="framework" class="form-control selectpicker">   
 
@@ -39,7 +39,7 @@ include '../View/Menu.html';
     <div class="container">
             
         <form action="../View/DistanceAndTimeForm.php" method="post" > 
-                <button type="submit" class="btn btn-success" style="margin-left:80%;">Continuar</button>
+                <button type="submit" class="btn btn-success" style="margin-left:80%; margin-top: 5%">Continuar</button>
             </form>
 
         </div>
