@@ -17,8 +17,8 @@ include '../View/MenuLogedInUser.php';
              </a>
            </p>    
          </div>-->
-     <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-plus-sign" spellcheck="color:#ffffff"></span> Crear sitio turístico</td></a>
+    <td> <a href="../View/CreateTouristSite.php" class="btn btn-info btn-lg" style = "background-color:green">
+                        <span class="glyphicon glyphicon-plus-sign" spellcheck="color:#ffffff" ></span> Crear sitio turístico</td></a>
 
         <div class="container">
             <h2 style="color: #ffffff">Lista de sitios turísticos</h2>
@@ -59,8 +59,10 @@ include '../View/MenuLogedInUser.php';
                             </a>
 
                         </td>
-                          <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" method="post" action="EditTouristSites.php"></span> Editar</td></a>
+                     <td> <a method="get" action="DetailTouristSites.php" href="../View/EditTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
+                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
+
+                           
                     </tr>
                     <tr>
                         <td style="color: #ffffff">3</td>
@@ -73,8 +75,10 @@ include '../View/MenuLogedInUser.php';
                             </p>
                         </td>
                         
-                          <td> <a href="#" class="btn btn-info btn-lg" style = "background-color:green">
+                     <td> <a method="get" action="DetailTouristSites.php" href="../View/EditTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
                         <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
+
+                            
                     </tr>
                 </tbody>
             </table>
