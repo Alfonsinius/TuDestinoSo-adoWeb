@@ -81,7 +81,7 @@ and open the template in the editor.
        
       <br>
     <br>
-        <a  class="button button3" href="http://localhost:81/proyectoExpertos/TuDestinoWeb/View/DetailTouristSites.php" role="button">Ver detalles</a>
+        <a  class="button button3" href="../View/DetailTouristSites.php" role="button">Ver detalles</a>
       
     </div>
        
