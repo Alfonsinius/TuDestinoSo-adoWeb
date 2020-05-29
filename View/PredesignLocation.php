@@ -16,34 +16,29 @@ include '../View/Menu.html';
     
    <h3 style="color:white; background-color:#2874A6">Seleccione una de la ubicaciones predeterminadas.</h3>
                
-  <div class="dropdown" style="margin-left: 40%">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Lugar de inicio
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-        
-      <li><a href="#">Cartago Centro</a></li>
-      <li><a href="#">Turrialba</a></li>
-      <li><a href="#">Oreamuno</a></li>
-      
-    </ul>
-  </div>
+   <center><strong>Lugar de inicio.</strong></center>
+  <select name="selectTime" id="framework" class="form-control selectpicker">   
+
+                        <option value="1">Cartago Centro</option>
+                        <option value="2">Turrialba</option>                 
+                        <option value="4">Oreamuno</option>
+                       
+                    </select>
+   </div>
    
-   <div class="dropdown" style="margin-top: 10%; margin-left:40%">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Punto de referencia
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-        
-      <li><a href="#">Básilica de los Angeles</a></li>
-      <li><a href="#">Ruinas de Cartago</a></li>
-      <li><a href="#">Iglesia Maria Auxiliadora</a></li>
-      
-    </ul>
-  </div>
+   <center><strong>Punto de referencia.</strong></center>
+  <select name="selectTime" id="framework" class="form-control selectpicker">   
+
+                        <option value="1">Básilica de los Angeles</option>
+                        <option value="2">Ruinas de Cartago</option>                 
+                        <option value="4">Iglesia Maria Auxiliadora</option>
+                       
+                    </select>
    </div>
         
     <div class="container">
             
-            <form action="" method="post" > 
+        <form action="../View/DistanceAndTimeForm.php" method="post" > 
                 <button type="submit" class="btn btn-success" style="margin-left:80%;">Continuar</button>
             </form>
 

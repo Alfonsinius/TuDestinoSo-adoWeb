@@ -16,6 +16,8 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"></li>
+                    <li><a href="../View/ConsultTouristSites.php">Consultar sitios</a></li>
+                    <li><a href="../View/Credit.php">Créditos</a></li>
                     <li><a href="../View/Login.php">Cerrar sesión</a></li>
                 </ul>
             </div>

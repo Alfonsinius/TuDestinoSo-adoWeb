@@ -19,10 +19,10 @@
     <center>
         <div class="container">
             
-             <h3 style="color:white; background-color:#2874A6">Deseamos conocer tú ubicación para ser más certeros en nuestra búsqueda, recuerda que
+             <h3 style="color:white;">Deseamos conocer tú ubicación para ser más certeros en nuestra búsqueda, recuerda que
             toda la información proporcionada es 100% confidencial, también puedes escoger una de nuestras ubicaciones predeterminadas.</h3>
             
-            <form action="../View/TouristRoutes.php" method="post" > 
+            <form action="../View/DistanceAndTimeForm.php" method="post" > 
                 <button type="submit" class="btn btn-primary" style="margin-left:-50%; margin-top: 10%;">Utilizar mi ubicación</button>
             </form>  
         </div>
