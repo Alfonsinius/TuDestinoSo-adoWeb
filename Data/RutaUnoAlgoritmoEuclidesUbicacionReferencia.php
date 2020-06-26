@@ -14,7 +14,7 @@ $ubicacionPredeterminadaGeneral = $_POST["selectSpecificLocation"];
 
 
 $distanciaEuclidianaArray = array();
-$distanciaEuclidianaArray = calculaDistanciaEuclidiana(10, 10, 1);
+$distanciaEuclidianaArray = calculaDistanciaEuclidiana($distanciaSeleccionada, $tiempoSeleccionado, $ubicacionPredeterminadaEspecifica);
 
 function cmp($a, $b) {
     return $a->distanciaEuclidiana > $b->distanciaEuclidiana;
@@ -93,6 +93,9 @@ function calculaDistanciaEnHoras($lat1, $lon1, $lat2, $lon2) {
     $time = $km / $speed;
     return $time;
 }
+
+
+
 
 /*echo 'Distancia seleccionada' . $distanciaSeleccionada . 'Tiempo seleccionado' . $tiempoSeleccionado .
  'ubicacionPredeterminadaESPECIFA' . $ubicacionPredeterminadaEspecifica . 'UbicacionPredeterminadaGeneral' . $ubicacionPredeterminadaGeneral;*/
