@@ -30,7 +30,7 @@
         
         <div class="container">
             
-            <form action="../View/PredesignLocation.php" method="post" > 
+            <form action="../View/DistanceAndTimeForm.php" method="post" > 
                 <button type="submit" class="btn btn-primary" style="margin-left:30%;margin-top: -60px;">Ubicaciones predeterminadas</button>
             </form>
 
