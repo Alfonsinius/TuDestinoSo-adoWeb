@@ -148,20 +148,20 @@ a:hover {
 				
 			</div>
 			<div class="card-body">
-                            <form action="../View/ManageTouristSites.php" method="post">
+                            <form action="../Data/login.php" method="post">
                                 
                                 <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="Nombre de usuario">
+						<input type="text" class="form-control" name="usuario" placeholder="Nombre de usuario">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="Contraseña">
+						<input type="password" class="form-control" name="psw" placeholder="Contraseña">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Recordarme
@@ -171,18 +171,9 @@ a:hover {
 						<input type="submit" value="Ingresar" class="btn float-right login_btn">
                                             
 					</div>
-			
+			                            </form>
+
 			</div>
-                            </form>
-					
-			<!-- <div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-                        </div>
-                        -->
 				
 			</div>
 		</div>
