@@ -60,6 +60,81 @@ and open the template in the editor.
 
             .button3 {padding: 14px 40px;}
         </style>
+         <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+ 
+    
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -71,54 +146,46 @@ and open the template in the editor.
         <?php
         include '../View/MenuLogedInUser.php';
         ?>
-    <center>
-        <font color="white" face="times" size=26>
-        Ver sitio turistico
+       
+ 
+<div class="container">
+    <form action="../Data/BuscarSitioTuristico.php" method="post">
+       <center>
+        <font color="blue" face="times" size=26>
+        Buscar sitio turistico
         </font>
     </center>
-
-    <div class="col-md-12 col-xs-10 col-sm-10" style="text-align: center">
-        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Nombre del sitio turistico</FONT></p>
-
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Nombre del destino</label>
     </div>
-    <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
-        <input type="text" id="fname" name="nombre" value="Volcán Irazú">
+    <div class="col-75">
+       <select name="nombre">
+        
+        <?php
+        include '../Data/conexionBaseDeDatos.php';
+           $conexion = conexionBaseDeDatos();
+          $query = ("SELECT * FROM destinos");
+             $result = mysqli_query($conexion, $query);
+          while ($valores = mysqli_fetch_array($result)) {
+            echo '<option value="'.$valores[idDestino].'">'.$valores[nombreDestino].'</option>';
+          }
+        ?>
+      </select>
     </div>
-    <div class="col-md-12 col-xs-16 col-sm-16" style="text-align: center">
-        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Ubicación del sitio</FONT></p>
-
+      </div>
+        
+        <div class="row">
+    <div class="col-50">
+        <input type="submit" name="editar" value ="Editar"> 
+            
+        <input type="submit" name="eliminar" value ="Eliminar">
     </div>
-    <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <input type="text" id="fname" name="ubicacion" value="Cordillera central, cerca de la ciudad de Cartago">
-    </div>
-    <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Descripción del sitio</FONT></p>
-
-    </div>
-    <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <input type="text" id="fname" name="descripcion" value="Es el volcán más alto de Costa Rica y ofrece una asombrosa vista."><br>
-    </div>
- <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-       <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Link imagen del sitio</FONT></p>
+     
    
-    </div>
+    </form>
 
- <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-       <input type="text" id="fname" name="imagen" value=""><br>
-    </div>
-   
-    <br>
-    <br>
-    <div class="col-md-14 col-xs-14 col-sm-14" style="text-align: center">
-      <div class="col-md-19 col-xs-19 col-sm-14" style="text-align: center">
-      <br>
-    <br>
-        <a  class="button button3" href="../View/TouristRoutes.php" role="button">Atrás</a>
-      
-    </div>
-    </div>
-
-
+</div>
 
 
 

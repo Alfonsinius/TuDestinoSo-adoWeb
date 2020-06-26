@@ -8,6 +8,75 @@ and open the template in the editor.
 <html>
     <head>
         <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+ <style>
+* {
+  box-sizing: border-box;
+}
+
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+ 
         <style>
             .footer {
                 position: fixed;
@@ -69,64 +138,115 @@ and open the template in the editor.
     <body style="background-color:#273746;">
 
         <?php
-        include '../View/MenuLogedInUser.php';
-        ?>
-    <center>
-        <font color="white" face="times" size=26>
-        Editar sitio turistico
-        </font>
-    </center>
-
-    <div class="col-md-12 col-xs-10 col-sm-10" style="text-align: center">
-        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Nombre del sitio turistico</FONT></p>
-
-    </div>
-    <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
-        <input type="text" id="fname" name="nombre" value="Playa Manzanillo">
-    </div>
-    <div class="col-md-12 col-xs-16 col-sm-16" style="text-align: center">
-        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Ubicación del sitio</FONT></p>
-
-    </div>
-    <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <input type="text" id="fname" name="ubicacion" value="Puntarenas">
-    </div>
-    <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Descripción del sitio</FONT></p>
-
-    </div>
-    <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-        <input type="text" id="fname" name="descripcion" value="Paraíso tropical con asombrosos arrecifes de córal"><br>
-    </div>
- <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-       <p style="color:white"> <FONT SIZE=4 FACE="times new roman">Link imagen del sitio</FONT></p>
-   
-    </div>
-
- <div class="col-md-12 col-xs-18 col-sm-18" style="text-align: center">
-       <input type="text" id="fname" name="imagen" value=""><br>
-    </div>
-   
-    <br>
-    <br>
-    <div class="col-md-19 col-xs-19 col-sm-14" style="text-align: center">
-      <br>
-    <br>
-        <a  class="button button3" href="../View/ManageTouristSites.php" role="button">Editar</a>
-      
-       <a  class="button button3" href="../View/ManageTouristSites.php" role="button">Cancelar</a>
+include '../View/MenuLogedInUser.php';
+?>
         
+         <?php
+         include '../Data/conexionBaseDeDatos.php';
+         
+        $id= $_GET["idDestino"]; 
+ $conexion = conexionBaseDeDatos();
+$query = "SELECT * FROM `destinos` WHERE idDestino=$id ";
+     // ejecuto consulta en la base
+      $result = mysqli_query($conexion, $query);
+            //extraigo el resultado de la base
+            while ($row = mysqli_fetch_array($result)) {
+                    
+                $idDestino=$row['idDestino'];
+                $nombreDestino=$row['nombreDestino'];
+                $descripcion=$row['descripcion'];
+                $ejex=$row['ubicacionX'];
+                $ejey=$row['ubicacionY'];
+                $provincia=$row['provincia'];
+                $imagen=$row['imagen'];
+                $precio=$row['precio'];
+            }
+?>
+   
+<div class="container">
+    <form action="../Data/EditarSitioTuristico.php" method="post">
+       <center>
+        <font color="blue" face="times" size=26>
+        Editar sitio turistico
+        
+        </font>
+          <div class="row">
+    <div class="col-25">
+      <label for="fname">ID del destino</label>
     </div>
- 
-
-
-
-
-    <div class="footer">
-        <p>Tu destino soñado</p>
-        <p>Creadores: Josseline Matamoros</p>
-        <p>Alfonso Jiménez</p>
-        <p>Versión 1.0</p>
+    <div class="col-75">
+       
+      <input type="text"  name="id"  readonly="readonly"  value="<?php echo $idDestino ?> "required>
     </div>
+    </center>
+      
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Nombre del destino</label>
+    </div>
+    <div class="col-75">
+       
+      <input type="text"  name="nombre"  value="<?php echo $nombreDestino ?> "required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Provincia</label>
+    </div>
+    <div class="col-75">
+      <input type="text"  name="provincia"  value="<?php echo $provincia ?>" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Link imagen</label>
+    </div>
+    <div class="col-75">
+      <input type="text"  name="imagen" value="<?php echo $imagen ?>" >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Precio</label>
+    </div>
+    <div class="col-75">
+      <input type="number"  name="precio" value="<?php echo $precio ?>"  required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Descripcion</label>
+    </div>
+    <div class="col-75">
+      <textarea required name="descripcion"   ><?php echo $descripcion ?></textarea>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="subject">Ubicacion en eje x</label>
+    </div>
+    <div class="col-75">
+        <input type="number" step="any"  name="ejex" value="<?php echo $ejex ?>"  required >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Ubicacion en eje y</label>
+    </div>
+    <div class="col-75">
+        <input type="number" step="any"  name="ejey" value="<?php echo $ejey ?>" required>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Editar">
+  </div>
+  </form>
+    
+</div>
+        <br>
+
+
+    
 </body>
 </html>

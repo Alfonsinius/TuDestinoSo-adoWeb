@@ -18,70 +18,50 @@ include '../View/MenuLogedInUser.php';
            </p>    
          </div>-->
     <td> <a href="../View/CreateTouristSite.php" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-plus-sign" spellcheck="color:#ffffff" ></span> Crear sitio turístico</td></a>
+            <span class="glyphicon glyphicon-plus-sign" spellcheck="color:#ffffff" ></span> Crear sitio turístico</td></a>
 
-        <div class="container">
-            <h2 style="color: #ffffff">Lista de sitios turísticos</h2>
-            <p style="color: #ffffff">Acá podrá visualizar y gestionar todos los sitios turísticos del sistema.</p>            
-            <table class="table" >
-                <thead>
-                    <tr>
-                        <th style="color: #ffffff">ID</th>
-                        <th style="color: #ffffff">Nombre</th>
-                        <th style="color: #ffffff">Descripción</th>
-                        <th style="color: #ffffff">Ubicación</th>
-                        <th style="color: #ffffff">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody  >
-                    <tr>
-                        <td style="color: #ffffff" >1</td>
-                        <td style="color: #ffffff" id="nombre">Playa Manzanillo</td>
-                        <td style="color: #ffffff" >Paraíso tropical con asombrosos arrecifes de córal</td>
-                        <td style="color: #ffffff">Puntarenas</td>
-                        
-                        <td style="color: #ffffff"><a href="#" class="btn btn-info btn-lg" style="background-color:red">
-                                <span class="glyphicon glyphicon-trash" style="color: #ffffff"></span> Eliminar sitio 
-                            </a></td>
+<div class="container">
+    <h2 style="color: #ffffff">Lista de sitios turísticos</h2>
+    <p style="color: #ffffff">Acá podrá visualizar y gestionar todos los sitios turísticos del sistema.</p>            
+    <table class="table" >
+        <thead>
+            <tr>
+                <th style="color: #ffffff">ID</th>
+                <th style="color: #ffffff">Nombre</th>
+                <th style="color: #ffffff">Descripción</th>
+                <th style="color: #ffffff">Provincia</th>
+                
+            </tr>
+        </thead>
+        <tbody  >
+            <?php
+            //incluyo el archivo con la información de la base
+            include '../Data/conexionBaseDeDatos.php';
+            //consulta  para extraer los servicios con fecha menor a la actual
+            $conexion = conexionBaseDeDatos();
+            $query = "SELECT * FROM `destinos` WHERE 1 ";
+            // ejecuto consulta en la base
+            $result = mysqli_query($conexion, $query);
+            //extraigo el resultado de la base
+            while ($row = mysqli_fetch_array($result)) {
+                echo "<tr><td width=\"10%\"><font face=\"verdana\" color=\"white\">" . $row["idDestino"]
+                . "</font></td>";
+                echo "<td width=\"25%\"><font face=\"verdana\" color=\"white\">" .
+                $row["nombreDestino"] . "</font></td>";
+                echo "<td width=\"25%\"><font face=\"verdana\"color=\"white\">" .
+                $row["descripcion"] . "</font></td>";
+                echo "<td width=\"25%\"><font face=\"verdana\"color=\"white\">" .
+                $row["provincia"] . "</font></td>";
+              
+            }
 
-                            <td> <a method="get" action="DetailTouristSites.php" href="../View/EditTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
 
-                        
-                    </tr>
-                    <tr>
-                        <td style="color: #ffffff">2</td>
-                        <td style="color: #ffffff">Volcán Irazú</td>
-                        <td style="color: #ffffff" >Es el volcán más alto de Costa Rica y ofrece una asombrosa vista.</td>
-                        <td style="color: #ffffff" >Cordillera central, cerca de la ciudad de Cartago</td>
-                        <td><a href="#" class="btn btn-info btn-lg" style="background-color:red">
-                                <span class="glyphicon glyphicon-trash" style="color: #ffffff"></span> Eliminar sitio 
-                            </a>
 
-                        </td>
-                     <td> <a method="get" action="DetailTouristSites.php" href="../View/EditTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
+            mysqli_close($conexion);
+            ?>
 
-                           
-                    </tr>
-                    <tr>
-                        <td style="color: #ffffff">3</td>
-                        <td style="color: #ffffff">Mirador de Orosí</td>
-                        <td style="color: #ffffff">Es un lugar especial si quieres pasar tiempo en familia o pasar tiempo con tu pareja, admirando el precioso paisaje</td>
-                        <td style="color: #ffffff">Orosi, Cartago</td>
-                        <td><a href="#" class="btn btn-info btn-lg" style="background-color:red">
-                                <span class="glyphicon glyphicon-trash" style="color: #ffffff"></span> Eliminar sitio 
-                            </a>
-                            </p>
-                        </td>
-                        
-                     <td> <a method="get" action="DetailTouristSites.php" href="../View/EditTouristSites.php" class="btn btn-info btn-lg" style = "background-color:green">
-                        <span class="glyphicon glyphicon-edit" spellcheck="color:#ffffff" ></span> Editar</td></a>
-
-                            
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </body>
+        </tbody>
+    </table>
+</div>
+</body>
 </html>
