@@ -1,3 +1,17 @@
+
+<?php
+include '../View/MenuLogedInUser.php';
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-color:#273746;">
+
 <?php
 
 include './conexionBaseDeDatos.php';
@@ -11,17 +25,19 @@ $entro = true; //variable de condición para guardar el primer dato y después c
 $guardaDistancias;
 $ubicacionPredeterminadaEspecifica = $_POST["selectGeneralLocation"];
 $ubicacionPredeterminadaGeneral = $_POST["selectSpecificLocation"];
+      
 
-
-$distanciaEuclidianaArray = array();
+  
+ $distanciaEuclidianaArray = array();
 $distanciaEuclidianaArray = calculaDistanciaEuclidiana($distanciaSeleccionada, $tiempoSeleccionado, $ubicacionPredeterminadaEspecifica);
 
 function cmp($a, $b) {
     return $a->distanciaEuclidiana > $b->distanciaEuclidiana;
 }
 
-usort($distanciaEuclidianaArray, "cmp");
-print_r($distanciaEuclidianaArray);
+//usort($distanciaEuclidianaArray, "cmp");
+ 
+//print_r($distanciaEuclidianaArray);
 
 function calculaDistanciaEuclidiana($distancia, $tiempo, $lugar) {
     $conexion = conexionBaseDeDatos();
@@ -46,19 +62,48 @@ function calculaDistanciaEuclidiana($distancia, $tiempo, $lugar) {
 
     while ($mostrar = mysqli_fetch_array($result)) {
 
-      
+
         $distanciaEuclidiana = sqrt(pow((calculaDistanciaEnHoras($coordenadasLatitude, $coordenadasLongitud, $mostrar['ubicacionX'], $mostrar['ubicacionY'])) - $distancia, 2) +
                 pow((calculaTiempo($coordenadasLatitude, $coordenadasLongitud, $mostrar['ubicacionX'], $mostrar['ubicacionY'])) - $tiempo, 2));
-          $sitioTuristico = new SitioTuristico($mostrar['nombreDestino'], $mostrar['descripcion'],$mostrar['precio'],$mostrar['provincia'], $distanciaEuclidiana);
+        $sitioTuristico = new SitioTuristico($mostrar['nombreDestino'], $mostrar['descripcion'], $distanciaEuclidiana, $coordenadasLatitude, $coordenadasLongitud, $mostrar['mapa']);
         array_push($listaSitiosTuristicos, $sitioTuristico);
-       
     }
+   ?>
+    
+    
+  <table class="table" >
+        <thead>
+            <tr>
+
+                <th style="color: white">Nombre</th>
+                <th style="color: white">Mapa</th>
 
 
-
-    return $listaSitiosTuristicos;
+            </tr>
+        </thead>
+        <tbody  >
+  <?php
+  $d=0;
+   foreach ($listaSitiosTuristicos as $prueba ) {
+              if($d<6){
+                echo "<tr><td width=\"10%\"><font face=\"verdana\" color=\"white\">" . $prueba->get_nombre()."<br>".$prueba->get_descripcion().
+                 "</font></td>";
+                echo "<td width=\"25%\"><font face=\"verdana\" color=\"white\">" . $prueba->getMapa()
+                . "</font></td>";
+                 $d++;
+              }else{
+                  $d++;
+              }
+            }
+            ?>
+            
+               </tbody>
+    </table>
+    
+            <?php
+ return $listaSitiosTuristicos;
+    
 }
-
 
 function calculaTiempo($lat1, $lon1, $lat2, $lon2) {
     $pi80 = M_PI / 180;
@@ -94,11 +139,6 @@ function calculaDistanciaEnHoras($lat1, $lon1, $lat2, $lon2) {
     return $time;
 }
 
+?>
 
-
-
-/*echo 'Distancia seleccionada' . $distanciaSeleccionada . 'Tiempo seleccionado' . $tiempoSeleccionado .
- 'ubicacionPredeterminadaESPECIFA' . $ubicacionPredeterminadaEspecifica . 'UbicacionPredeterminadaGeneral' . $ubicacionPredeterminadaGeneral;*/
-
-
-
+        <a href="../View/TouristRoutes.php?distancia=$distanciaSeleccionada, &tiempo=$tiempoSeleccionado,&lugar=$ubicacionPredeterminadaEspecifica">Ver ruta 2</a>
