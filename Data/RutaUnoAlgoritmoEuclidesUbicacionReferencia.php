@@ -39,6 +39,9 @@ function cmp($a, $b) {
  
 //print_r($distanciaEuclidianaArray);
 
+         
+        
+     
 function calculaDistanciaEuclidiana($distancia, $tiempo, $lugar) {
     $conexion = conexionBaseDeDatos();
 
@@ -70,7 +73,7 @@ function calculaDistanciaEuclidiana($distancia, $tiempo, $lugar) {
     }
    ?>
     
-    
+       
   <table class="table" >
         <thead>
             <tr>
@@ -82,17 +85,36 @@ function calculaDistanciaEuclidiana($distancia, $tiempo, $lugar) {
             </tr>
         </thead>
         <tbody  >
+            <tr>
+
+                <th style="color: white">Ruta 1</th>
+                <th style="color: white">Ruta 1</th>
+
+
+            </tr>
   <?php
+
   $d=0;
+ 
    foreach ($listaSitiosTuristicos as $prueba ) {
-              if($d<6){
+              if($d<7){
                 echo "<tr><td width=\"10%\"><font face=\"verdana\" color=\"white\">" . $prueba->get_nombre()."<br>".$prueba->get_descripcion().
                  "</font></td>";
                 echo "<td width=\"25%\"><font face=\"verdana\" color=\"white\">" . $prueba->getMapa()
                 . "</font></td>";
                  $d++;
+              }else if($d==7){
+                echo "<tr><td width=\"10%\"><font face=\"verdana\" color=\"white\">" ."Ruta 2" .
+                 "</font></td>";
+                echo "<td width=\"25%\"><font face=\"verdana\" color=\"white\">" . "Ruta 2"
+                . "</font></td>";
+                 $d++;
               }else{
-                  $d++;
+                   echo "<tr><td width=\"10%\"><font face=\"verdana\" color=\"white\">" . $prueba->get_nombre()."<br>".$prueba->get_descripcion().
+                 "</font></td>";
+                echo "<td width=\"25%\"><font face=\"verdana\" color=\"white\">" . $prueba->getMapa()
+                . "</font></td>";
+                 $d++;
               }
             }
             ?>
@@ -101,6 +123,7 @@ function calculaDistanciaEuclidiana($distancia, $tiempo, $lugar) {
     </table>
     
             <?php
+             
  return $listaSitiosTuristicos;
     
 }
@@ -138,7 +161,7 @@ function calculaDistanciaEnHoras($lat1, $lon1, $lat2, $lon2) {
     $time = $km / $speed;
     return $time;
 }
-
+  
 ?>
 
-        <a href="../View/TouristRoutes.php?distancia=$distanciaSeleccionada, &tiempo=$tiempoSeleccionado,&lugar=$ubicacionPredeterminadaEspecifica">Ver ruta 2</a>
+      
